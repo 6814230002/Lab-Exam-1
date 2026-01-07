@@ -1,0 +1,114 @@
+/* พื้นฐานของหน้าเว็บ */
+.gallery-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title {
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+}
+
+/* ส่วนของฟอร์มค้นหา */
+.search-box {
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-input {
+    padding: 12px 20px;
+    width: 300px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.search-input:focus {
+    border-color: #3498db;
+}
+
+.search-button {
+    padding: 12px 25px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.search-button:hover {
+    background-color: #2980b9;
+}
+
+/* การจัดวาง Grid 3x2 */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 คอลัมน์ */
+    gap: 20px;
+}
+
+/* การตกแต่งการ์ดรูปภาพ */
+.image-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.image-card:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* บังคับให้รูปเต็มกรอบสวยงาม */
+    display: block;
+}
+
+.image-info {
+    padding: 15px;
+    background: #fff;
+    text-decoration: none;
+}
+
+.image-info p {
+    margin: 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.image-info span {
+    font-size: 12px;
+    color: #3498db;
+}
+
+/* Responsive สำหรับมือถือ */
+@media (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr); /* เหลือ 2 คอลัมน์ในแท็บเล็ต */
+    }
+}
+
+@media (max-width: 480px) {
+    .image-grid {
+        grid-template-columns: 1fr; /* เหลือ 1 คอลัมน์ในมือถือ */
+    }
+}
+html, body, #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* ป้องกันการ Scroll ซ้อน */
+}
